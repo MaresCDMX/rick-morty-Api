@@ -19,9 +19,9 @@ const ResidentsContainer = ({ residents }) => {
       if (residents.length > 0) {
         myLength = residents.length;
         for (let i = 0; i < myLength; i++) {
-          if (i >= 10) {
+          /*if (i >= 10) {
             break;
-          }
+          }*/
           axios.get(`${residents[i]}`).then((res) => {
             characteresTemp.push(res.data);
             setMyResidents(res.data);
@@ -52,12 +52,12 @@ const ResidentInfo = ({ name, image, status, origin, episode }) => {
   return (
     <>
       <div className="gallery">
-        <Card style={{ width: "16rem" }}>
-          <Card.Img variant="top" src={image} style={{ width: "15rem" }} />
+        <Card style={{ width: "14rem" }}>
+          <Card.Img variant="top" src={image} />
           <Card.Body>
-            <Card.Title>Name: {name}</Card.Title>{" "}
+            <Card.Title>Name: {name}</Card.Title>
+            <br />
             <Card.Text>
-              {" "}
               {status === "Alive" ? (
                 <FcLike />
               ) : status === "Dead" ? (
@@ -66,12 +66,13 @@ const ResidentInfo = ({ name, image, status, origin, episode }) => {
                 <FcQuestions />
               )}{" "}
               <strong>Status:</strong> {status}
-            </Card.Text>{" "}
+            </Card.Text>
+            <br />
             <Card.Text>
-              <strong>Origin:</strong> {origin}{" "}
-            </Card.Text>{" "}
+              <strong>Origin:</strong> {origin}
+            </Card.Text>
+            <br />
             <Card.Text>
-              {" "}
               <strong>Episodes:</strong> {episode}
             </Card.Text>
           </Card.Body>
@@ -190,9 +191,7 @@ function App() {
   return (
     <div className="App layout">
       <Logo />
-      <Alert variant="warning">
-        There is a total of 108 locations sorted by id.
-      </Alert>{" "}
+
       <div className="serchBar">
         <Search handleSearchTerm={handleSearch} />
         <Clear handleClearTerm={handleClear} />
@@ -200,9 +199,8 @@ function App() {
       <>
         <div className="gallery">{arrayResidents}</div>
         <Alert variant="warning">
-          {" "}
-          The maximum number of residents displayed is 10.
-        </Alert>
+          There is a total of 108 locations sorted by id.
+        </Alert>{" "}
         <ResidentsContainer residents={location.residents} />
       </>
     </div>
