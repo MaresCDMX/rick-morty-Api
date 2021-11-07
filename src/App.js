@@ -90,7 +90,7 @@ const Search = ({ handleSearchTerm }) => {
         value={searchTerm}
         placeholder="Location..."
         style={{
-          width: "20rem",
+          width: "15rem",
           backgroundColor: "#f4f9f9",
         }}
         onChange={(e) => {
@@ -191,15 +191,18 @@ function App() {
     <div className="App layout">
       <Logo />
       <Alert variant="warning">
-        There is a total of 108 locations sorted by id.!
-      </Alert>
+        There is a total of 108 locations sorted by id.
+      </Alert>{" "}
       <div className="serchBar">
         <Search handleSearchTerm={handleSearch} />
         <Clear handleClearTerm={handleClear} />
       </div>
-
       <>
         <div className="gallery">{arrayResidents}</div>
+        <Alert variant="warning">
+          {" "}
+          The maximum number of residents displayed is 10.
+        </Alert>
         <ResidentsContainer residents={location.residents} />
       </>
     </div>
