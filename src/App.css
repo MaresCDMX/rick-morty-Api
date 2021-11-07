@@ -1,38 +1,101 @@
 .App {
   text-align: center;
+
+  background-image: url("./img/stars.png");
+  background-color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.layout {
+  color: white;
+  background: #000
+    url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top;
+  z-index: 0;
+}
+body {
+  display: flex;
+  background-image: url("./img/stars.png");
+  background-color: black;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Lato";
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hero-image svg {
+  margin-top: 5px;
+  width: 10%;
+  height: 10%;
+  fill: rgb(245, 138, 138);
+}
+
+.hero {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(50vh - 60px);
+  text-align: center;
+  position: relative;
+}
+
+.hero-title {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(50vh - 60px);
+  text-align: center;
+  position: relative;
+}
+
+input {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 48px 0 rgb(0 0 0 / 20%);
+  font-family: Hind, sans-serif;
+  height: 64px;
+  padding: 0 1rem 0 1rem;
+}
+
+.mybutton {
+  padding: 0 1rem 0 1rem;
+  height: 64px;
+  border-radius: 8px;
+  box-shadow: 0 4px 48px 0 rgb(0 0 0 / 20%);
+}
+
+.card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  max-width: 30rem;
+  min-height: 12rem;
+  margin: 10px;
+  padding: 10px 10px;
+  border-radius: 15px;
+  box-shadow: 6px 10px 5px 0px rgba(199, 197, 199, 0.75);
+  color: black;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin: 10px;
 }
