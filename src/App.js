@@ -19,9 +19,6 @@ const ResidentsContainer = ({ residents }) => {
       if (residents.length > 0) {
         myLength = residents.length;
         for (let i = 0; i < myLength; i++) {
-          /*if (i >= 10) {
-            break;
-          }*/
           axios.get(`${residents[i]}`).then((res) => {
             characteresTemp.push(res.data);
             setMyResidents(res.data);
