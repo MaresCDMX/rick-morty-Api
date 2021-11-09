@@ -138,7 +138,6 @@ function App() {
       );
 
       promise.then((res) => {
-        console.log(res.data);
         setHasData(true);
         setLocation(res.data);
       });
@@ -194,12 +193,11 @@ function App() {
 
       <div className="serchBar">
         <Search handleSearchTerm={handleSearch} />
-        <Clear handleClearTerm={handleClear} />
       </div>
       <>
         <div className="gallery">{arrayResidents}</div>
         <Alert variant="warning">
-          There is a total of 108 locations sorted by id.
+          There is a total of 126 locations sorted by id.
         </Alert>{" "}
         <ResidentsContainer residents={location.residents} />
       </>
